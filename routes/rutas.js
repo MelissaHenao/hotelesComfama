@@ -1,9 +1,10 @@
 
-//en este archivo
+//en este archivo SE ENRUTAN O ATIENDEN LAS PETICIONES
 import express from'express' //nueva forma para traer express 
 
 //si yo traigo a express puedo crear una variable para personalizar las rutas (end point) de mis servicios
 //como se observa a continuacion 
+
 
 export let rutas = express.Router() //archivo global
 //Router m,e permite crear el archivo de rutas, me permite separar

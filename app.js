@@ -31,6 +31,9 @@
 
 //para traer la clase del acrhivo servidor.js, utilizo import
 
+//ESTE ARCHIVO (APP.JS) DESPIERTA EL SERVIDOR
+
+//Importamos DOTENV PARA MANIPULAR LAL VARIABLE DE ENTORNO
 import {Servidor} from './servidor/Servidor.js'
 import 'dotenv/config' 
 
@@ -40,3 +43,6 @@ let servidorComfama = new Servidor()
 
 //enciendo servidor llamando el metodo de la carpeta servidor, del archivo servidor
 servidorComfama.encenderServidor()
+
+
+console.log(process.env.PORT)

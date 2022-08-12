@@ -32,10 +32,11 @@ import {rutas} from '../routes/rutas.js'
     }
 
     encenderServidor(){
+        //PROCESS.ENV.PORT ES PARA ACCEDER AL PUERTO DE LA VARIABLE DE ENTORNO DEL SISTEMA DONDE YO DESPLIEGO O EL DEL ARCHIVO .ENV
         
-        this.app.listen(3000,function(){
+        this.app.listen(process.env.PORT,function(){
             // colback:  siempre se va a ejecutar primero lo que hay antes de la coma y luego la funcion
-            console.log("servidor encendido")
+            console.log("servidor encendido"+ process.env.PORT)
         })
                 
     }
