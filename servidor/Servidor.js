@@ -16,7 +16,9 @@ import {rutas} from '../routes/rutas.js'
     constructor(){
         this.app = express() // definiendo un atributo(variable), pero como es un atributo, ya no se llama const app como se programo en app.js, si no this.app
         //clase conjunto de variables(atributos) y funciones(metodos) que estan desribiendo algo
+        this.habilitarBody()
         this.atenderPeticiones() //atiendo las peticiones del usuario
+     
     }
 
     atenderPeticiones(){ //estamos enrutando peticiones
@@ -26,9 +28,14 @@ import {rutas} from '../routes/rutas.js'
             //aca responde y envia(recibe y procesa)
          // res.send('Hello World') COPIO Y PEGO LA FUNCION EN ROUTES
         //)
-
         //cambio el this.app.get por this.app.use=express
-        this.app.use= express('/',rutas)// atributo una variable
+      
+        this.app.use('/',rutas)// atributo una variable
+     
+    }
+
+    habilitarBody(){
+        this.app.use(express.json()) //habilitar(permitiendo) los datos que vengan en json sean leidos
     }
 
     encenderServidor(){
@@ -36,7 +43,7 @@ import {rutas} from '../routes/rutas.js'
         
         this.app.listen(process.env.PORT,function(){
             // colback:  siempre se va a ejecutar primero lo que hay antes de la coma y luego la funcion
-            console.log("servidor encendido"+ process.env.PORT)
+            console.log("servidor encendido "+ process.env.PORT)
         })
                 
     }
