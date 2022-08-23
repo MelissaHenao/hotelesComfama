@@ -6,7 +6,8 @@ import express from'express' //nueva forma para traer express
 // llamamos las rutas
 import {rutas} from '../routes/rutas.js'
 
-
+//llamar al metodo conectar con BD - del archivo de conexcion
+import {conectar} from '../dataBase/conexion'
 //creo una clase llamada Servidor
 // VOY A EXPORTAR LA CLASE PARA QUE SE PUEDA VER EN OTROS ARCHIVOS
  export class Servidor{
@@ -46,6 +47,10 @@ import {rutas} from '../routes/rutas.js'
             console.log("servidor encendido "+ process.env.PORT)
         })
                 
+    }
+
+    conectarConBd(){
+        conectar()
     }
 }
 

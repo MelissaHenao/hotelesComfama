@@ -20,7 +20,7 @@ rutas.get('/viajescomfama/v1/habitaciones', controladorHabitacion.buscarHabitaci
 rutas.get('/viajescomfama/v1/habitacion/:id',controladorHabitacion.buscarHabitacionPporId) //Ruta para buscar una habitacion por id
 //le coloco dos puntos antes del id para indicarle que va a resivir un codiggo variable
 rutas.post('/viajescomfama/v1/habitacion/',controladorHabitacion.agregarHabitacion) //Ruta para crear una habitacion
-rutas.put('/viajescomfama/v1/habitacion/',controladorHabitacion.editarHabitacion) //Ruta para actualizaruna habitacion
+rutas.put('/viajescomfama/v1/habitacion/:id',controladorHabitacion.editarHabitacion) //Ruta para actualizaruna habitacion
  
 
 

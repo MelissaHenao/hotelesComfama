@@ -7,6 +7,7 @@
     //dentro de mi clase voy hacer metodos, cada metodo estara asociado a cada uno de las rutas o peticiones que voy atender (get-post.etc)
 
     constructor(){}
+
     //buscar habitaciones
     buscarHabitaciones(request,response){
         // siempre un controlador va intentar dar solucion a la Peticion, pero es posible que no lo logre por eso hay que programar un catch
@@ -79,12 +80,23 @@
  
     
 
-
+//Lo primero que hace un controlador es esculcar la peticion
     //Editar habitacion
     editarHabitacion(request,response){
+
+        //recibir el id como parametro
+        let id=request.params.id
+
+        //recibir los datos que voy a editar(body)
+        let datos= request.body
+        
+        //El controlador responde, le responde al cliente
         try{
             
-            response.status(200).json({})
+            response.status(200).json({
+                mensaje:"Exito editando habitacion" +id,
+                datos:datos
+            })
 
         } catch(error){
             
